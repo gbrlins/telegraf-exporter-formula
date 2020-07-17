@@ -26,6 +26,9 @@ Dentro dele, crie os arquivos presentes em <a href="https://github.com/gbrlins/t
 
 5. **Restartar o SUSE Manager**: ```spacewalk-service restart```
 
+Nesse momento, já é possível acrescentar a formula, através do SUSE Manager, nos hosts desejados.
+As métricas são expostas em http://localhost:9273/metrics e os responsáveis pelo monitoramento de periféricos chamam "usb_activity"
+
 6. **Configurar o arquivo prometheus.yml do host rodando Prometheus**:
 ```
 vim /etc/prometheus/prometheus.yml
