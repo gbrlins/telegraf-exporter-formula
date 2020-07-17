@@ -17,11 +17,12 @@ cd /srv/salt/telegraf-exporter
  
 3. **Mover arquivo de configuração pre-definido**: Criar diretório chamado *files*  ```mkdir files``` e, dentro dele, criar o arquivo ```vim telegraf.conf``` com o conteúdo de <a href="https://github.com/gbrlins/telegraf-exporter-formula/blob/master/telegraf.conf">telegraf.conf</a>  
 
-4. **Configurar metadata**: Será necessário copiar os três arquivos dentro da pasta arquivos para o diretório abaixo. Para isso, crie um diretório dentro do path *formula_metadata* e, dentro dele, crie os arquivos presentes em <a href="https://github.com/gbrlins/telegraf-exporter-formula/tree/master/arquivos">arquivos</a>
+4. **Configurar metadata**: Será necessário copiar os três arquivos dentro da pasta arquivos para o diretório abaixo. Para isso, crie um diretório dentro do path *formula_metadata*
 ```
 cd /srv/formula_metadata
 mkdir telegraf-exporter
 ```
+Dentro dele, crie os arquivos presentes em <a href="https://github.com/gbrlins/telegraf-exporter-formula/tree/master/arquivos">arquivos</a>
 
 5. **Restartar o SUSE Manager**: ```spacewalk-service restart```
 
