@@ -11,16 +11,19 @@
 
 
 {% if grains['os'] == 'Ubuntu' %}
-install-telegraf-ubuntu:
+add-telegraf-repo-ubuntu:
   pkgrepo.managed:
-    - name: deb https://repos.influxdata.com/{{ id }} {{ codename }} stable
+    - humanname: Repositorio para telegraf ubuntu
+    - name: deb http://repos.influxdata.com/{{ id }} {{ codename }} stable
     - dist: {{ codename }}
     - file: /etc/apt/sources.list.d/influxdb.list
-    - keyserver: https://repos.influxdata.com/influxdb.key
+    - gpgcheck: 1
+    - key_url: https://repos.influxdata.com/influxdb.key
 
 telegraf-ubuntu:
   pkg.installed:
     - fromrepo: {{ codename }}
+    - refresh: True
     - pkgs:
       - telegraf
 
