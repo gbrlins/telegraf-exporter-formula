@@ -1,13 +1,13 @@
-grok_exporter:
+telegraf_exporter:
   $type: group
-  $help: Telegraf exporter for show connected USB Devices
+  $help: Telegraf exporter to show connected USB Devices
 
   enabled:
     $type: boolean
     $default: True
 
   args:
-    $name: "Arguments"
+    $name: "Running"
     $type: text
-    $default: 
+    $default: --web.listen-address=":9273/metrics" 
     $help: Please refer to the documentation for available options.
