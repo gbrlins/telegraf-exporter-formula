@@ -28,15 +28,20 @@ telegraf-ubuntu:
       - telegraf
 
 {% elif grains['os'] == 'SUSE' %}
-install-telegraf-suse:
+add-telegraf-repo-sles:
+  pkgrepo.managed:
+    - humanname: Repositorio para telegraf SUSE
+    - baseurl: https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Leap_15.1/
+    - gpgcheck: 1
+    - gpgkey: https://download.opensuse.org/repositories/devel:/languages:/go/openSUSE_Leap_15.1/repodata/repomd.xml.key
+    - refresh: True
+
+telegraf-sles:
   pkg.installed:
-    - fromrepo: obs://devel:languages:go/
-    - skip_verify: True
-    - skip_suggestions: True
     - refresh: True
     - pkgs:
       - telegraf 
-{% endif  %}
+{% endif %}
 
 create-file:
   file.managed:
@@ -45,7 +50,7 @@ create-file:
 telegraf.service:
   service.running:
     - enable: True
-    - reload: True
+    - full_restart: True
 
 /etc/telegraf/telegraf.conf:
   file.managed:
