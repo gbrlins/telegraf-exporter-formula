@@ -1,4 +1,4 @@
-# Criando um salt-formula no SUMA: telegraf-exporter <img src="https://img2.gratispng.com/20180821/ywt/kisspng-opensuse-suse-linux-distributions-operating-system-suse-logo-software-logo-5b7cad67a58a40.1118626715348975116781.jpg">
+# Criando um salt-formula no SUMA: telegraf-exporter <img src="https://en.opensuse.org/images/c/cd/Button-colour.png" height="100" width="100"> 
 
 *Documentação disponível em <a href="https://docs.influxdata.com/telegraf/v1.14/">documentação Telegraf</a>*
 
