@@ -48,11 +48,6 @@ create-file:
   file.managed:
     - name: /tmp/usb_activity.log
 
-telegraf.service:
-  service.running:
-    - enable: True
-    - restart: True
-
 /etc/telegraf/telegraf.conf:
   file.managed:
     - source: salt://telegraf-exporter/files/telegraf.conf
@@ -60,6 +55,11 @@ telegraf.service:
     - group: root
     - user: root    
     - mode: 644
+
+telegraf.service:
+  service.running:
+    - enable: True
+    - restart: True
 
 {% else %}
 {% endif %}
