@@ -47,6 +47,9 @@ telegraf-sles:
 create-file:
   file.managed:
     - name: /tmp/usb_activity.log
+    - user: telegraf
+    - group: telegraf
+    - mode: 644
 
 /etc/telegraf/telegraf.conf:
   file.managed:
